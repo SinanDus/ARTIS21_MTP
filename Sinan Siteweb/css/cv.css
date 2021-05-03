@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
+
+.sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#131313;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidebar a {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color:green;
+    display: block;
+  }
+  
+  .sidebar a:hover {
+    color:chartreuse;
+  }
+  
+.CV *{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+body{
+  background: #585c68;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.semi-bold {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .CV {
+    width: 800px;
+    height: auto;
+    display: flex;
+    margin: 50px auto;
+  }
+  
+.CV .CV_Gauche {
+  width: 280px;
+  background: #131313
+}
+
+.CV .CV_Gauche .Profil {
+  width: 100%;
+  height: 280px;
+}
+
+.CV .CV_Gauche .Profil img {
+  width: 100%;
+  height: 100%;
+}
+
+.CV .CV_Gauche .CV_Contenu {
+  padding: 0 25px;  
+}
+
+.CV .Titre {
+  margin-bottom: 20px;
+}
+
+.CV .CV_Gauche .bold {
+  color: #fff;
+}
+
+.CV .CV_Gauche .regular {
+  color: #b1eaff;
+}
+
+.CV .CV_Objet {
+  padding: 25px 0;
+  border-bottom: 2px solid #b1eaff;
+}
+
+.CV .CV_Gauche .CV_Objet:last-child,
+.CV .CV_Droite .CV_Objet:last-child {
+  border-bottom: 0px;
+}
+
+.CV .CV_Gauche ul li{
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.CV .CV_Gauche ul li:last-child {
+  margin-bottom: 0;
+}
+
+.CV .CV_Gauche ul li .icones{
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  color: #0bb5f4;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 16px;
+  position: relative;
+}
+
+.CV .icones i,
+.CV .CV_Droite .CV_Hobbie ul li i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform : translate(-50%, -50%)
+}
+
+.CV .CV_Gauche ul li .Contacts_CV{
+  color: #b1eaff
+}
+
+.CV .CV_Gauche .compétences_CV ul li {
+  display : flex;
+  margin-bottom: 10px;
+  color: #b1eaff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CV .CV_Gauche .compétences_CV ul li .compétences_nom {
+  width: 20%;
+}
+
+.CV .CV_Gauche .compétences_CV ul li .compétences_progress {
+  width: 60%;
+  margin: 0 20px;
+  height: 5px;
+  background: #009fd9;
+  position: relative;
+}
+
+.CV .CV_Gauche .compétences_CV ul li .par{
+  width: 15%;
+}
+
+.CV .CV_Gauche .compétences_CV ul li .compétences_progress span{
+  position : absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+}
+
+.CV .CV_Gauche .cv_rs .semi-bold {
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.CV .CV_Droite {
+  width: 520px;
+  background: #2b2a2a;
+  padding: 25px;
+}
+
+.CV .CV_Droite .bold{
+  color: #fff;
+}
+
+.CV .CV_Droite .CV_Travail ul,
+.CV .CV_Droite .CV_Education ul {
+ padding-left: 40px;
+ overflow: hidden;
+}
+
+.CV .CV_Droite ul li {
+  position: relative;
+}
+
+.CV .CV_Droite ul li .date{
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.resume .resume_right ul li .info {
+  margin-bottom: 0;
+}
+
+.CV .CV_Droite .CV_Travail ul li:before,
+.CV .CV_Droite .CV_Education ul li:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.CV .CV_Droite .CV_Travail ul li:after
+.CV .CV_Droite .CV_Education ul li:after{
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -21px;
+  width: 2px;
+  height: 115px;
+  background: #fff;
+}
+
+.CV .CV_Droite .CV_Hobbie ul{
+  display:flex;
+  justify-content: space-between;
+}
+
+.CV .CV_Droite .CV_Hobbie ul li {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #0bb5f4;
+  border-radius: 50%;
+  position: relative;
+  color: #0bb5f4;
+}
+
+.CV .CV_Droite .CV_Hobbie ul li i{
+  font-size: 30px;
+}
+
+.CV .CV_Droite .CV_Hobbie ul li:before{
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -52px;
+  width: 50px;
+  height: 2px;
+  background: #0bb5f4;
+}
+
+.CV .CV_Droite .CV_Hobbie ul li:last-child::before{
+  display: none;
+}
+
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}

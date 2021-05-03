@@ -1,0 +1,114 @@
+
+
+.sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#131313;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidebar a {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color:green;
+    display: block;
+  }
+  
+  .sidebar a:hover {
+    color:chartreuse;
+  }
+
+  .main {
+    margin-left: 160px;
+    padding: 0px 10px;
+  }
+  .First {
+    margin-left: 160px;
+    padding: 0px 10px;
+  }
+
+  .index p {
+    margin-left: 160px;
+    padding: 0px 10px;
+  }
+  html{
+    margin-left: 160px;
+    height:auto;
+    background: linear-gradient(#ccd3d2 , #2CA387,#23826c);
+  }
+
+  .Form {
+    margin-left: 160px;
+    padding: 0px 10px;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .Projets {
+    margin-left: 160px;
+    padding: 0px 10px;
+    display: block;
+    font-family:'Courier New', Courier, monospace
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  .Form {
+    float: left;
+    width: 50%;
+    margin-top: 4px;
+    padding: 20px;
+  }
+
+  .row:after {
+    margin-top: 4px;
+    content: "";
+    display: table;
+    clear: both;
+  }
+ 
+  [class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }

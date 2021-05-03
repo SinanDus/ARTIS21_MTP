@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Projet perso sur HTML">
+  <meta name="keywords" content="HTML">
+  <meta name="viewport" content="width=device-width, initial scale=1.0">
+  <meta name="author" content="Sinan">
+  <title>Sinan Dustegor</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="jquery.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+  <a href="index.html">Accueil</a>
+  <a href="CV.html">Mon CV</a>
+  <a href="Projets.html">Mes projets</a>
+  <a href="Contact.html">Me contacter</a>
+</div>
+<a href="https://www.sinandustegor.wordpress.com"/> <p>Lien vers site Wordpress</p></a>
+<p>En cour de construction :</p>
+<script src="js/three.min.js"></script>
+<script src="js/GLTFLoader.js"></script>
+<script src="js/OrbitControls.js"></script>
+<script src="js/three.min.js"></script>
+<script>
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight);
+
+  var renderer = new THREE.WebGLRenderer({antialias: true});
+  renderer.setSize(window.innerWidth,window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  var geometry = new THREE.BoxGeometry(1,1,1);
+  var material = new THREE.MeshBasicMaterial({color: 0xff0000});
+  var cube = new THREE.Mesh(geometry,material);
+  scene.add(cube);
+
+  cube.position.z = -5;
+  cube.rotation.x = 10;
+  cube.rotation.y = 5;
+
+  renderer.render(scene,camera);
+
+  var animate = function(){
+    cube.rotation.x += 0.01;
+    renderer.render(scene,camera);
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+</body>
+</html>

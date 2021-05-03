@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Projet perso sur HTML">
+  <meta name="keywords" content="HTML">
+  <meta name="viewport" content="width=device-width, initial scale=1.0">
+  <meta name="author" content="Sinan">
+  <title>Sinan Dustegor</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a href="index.html">Accueil</a>
+  <a href="CV.html">Mon CV</a>
+  <a href="Projets.html">Mes projets</a>
+  <a href="Contact.html">Me contacter</a>
+</div>
+<script type="module">
+
+import * as THREE from "https://threejs.org/build/three.module.js";
+import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
+
+  var scene, camera, renderer, controls;
+  function init() {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(95,window.innerWidth/window.innerHeight,45,30000);
+    camera.position.set(180,190,850);
+    renderer = new THREE.WebGLRenderer({antialias:true});
+    renderer.setSize(window.innerWidth,window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    controls = new OrbitControls( camera, renderer.domElement );
+    controls.addEventListener('change', renderer);
+    controls.minDistance = 500;
+    controls.maxDistance = 2500;
+
+    var neheTexture = new THREE.ImageUtils.loadTexture("images/SphereTextire.jpg"); 
+
+    var material = new THREE.MeshBasicMaterial( { map:neheTexture, side:THREE.DoubleSide });
+    var geometry = new THREE.SphereGeometry(400, 400, 500);
+    var cube = new THREE.Mesh (geometry, material);
+
+    var loader = new THREE.FontLoader();
+
+loader.load("js/helvetiker_regular.typeface.json", function(font) {
+
+    var textGeo = new THREE.TextGeometry("Bienvenue", {
+
+        font: font,
+
+        size: 150,
+        height: 10,
+        curveSegments: 12,
+
+        bevelThickness: 1,
+        bevelSize: 1,
+        bevelEnabled: true
+
+     });
+
+    var textMat = new THREE.MeshLambertMaterial({color: 0xffffff});
+
+    var textMesh = new THREE.Mesh(textGeo, textMat);
+    textMesh.position.x = -500;
+    textMesh.position.y = -200;
+    textMesh.position.z = 500;
+    scene.add(textMesh);
+
+});
+    
+    var materialArray = [];
+    var texture_ft = new THREE.TextureLoader().load( 'images/corona_ft.png');
+    var texture_bk = new THREE.TextureLoader().load( 'images/corona_bk.png');
+    var texture_up = new THREE.TextureLoader().load( 'images/corona_up.png');
+    var texture_dn = new THREE.TextureLoader().load( 'images/corona_dn.png');
+    var texture_rt = new THREE.TextureLoader().load( 'images/corona_rt.png');
+    var texture_lf = new THREE.TextureLoader().load( 'images/corona_lf.png');
+      
+    materialArray.push(new THREE.MeshBasicMaterial( { map: texture_ft }));
+    materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
+    materialArray.push(new THREE.MeshBasicMaterial( { map: texture_up }));
+    materialArray.push(new THREE.MeshBasicMaterial( { map: texture_dn }));
+    materialArray.push(new THREE.MeshBasicMaterial( { map: texture_rt }));
+    materialArray.push(new THREE.MeshBasicMaterial( { map: texture_lf }));
+
+    for (var i = 0; i < 6; i++)
+       materialArray[i].side = THREE.BackSide;
+    var skyboxGeo = new THREE.BoxGeometry( 10000, 10000, 10000);
+    var skybox = new THREE.Mesh( skyboxGeo, materialArray );
+    scene.add( skybox, cube );  
+    animate();
+  }
+  function animate() {
+    renderer.render(scene,camera);
+    requestAnimationFrame(animate);
+  }
+  init();
+</script>
+
+</body>
+</html>
+ 
